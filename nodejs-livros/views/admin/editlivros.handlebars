@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Cadastro de Livros</title>
+    <link href="../../public/css/bootstrap.min.css" rel="stylesheet ">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="../public/bootstrap/js/dist/button.js"></script>
+</head>
+{{>_navbar}}
+
+<body class="text-center" style="background-image: url(https://th.bing.com/th/id/R.f84ee3da08f7b36cc2f31042da4bbacb?rik=QUgtAk21E6NQXA&riu=http%3a%2f%2fimg4.wikia.nocookie.net%2f__cb20140520211519%2fmiddleearthshadowofmordor7723%2fimages%2f5%2f50%2fYre1o.jpg&ehk=wKiZyMeErs30hFAZwWxlvPGiqx9fEs8w7Htjx7OwKqc%3d&risl=&pid=ImgRaw&r=0);">
+    <main class="container-sm" style="max-width: 520px; background: #303030; opacity: 0.85158; border-radius: 8px; margin-top: 2%;">
+    <form action="/admin/minha-estante" method="post" name="form" style="margin: 5%; padding: 15px">
+
+        <h1 style="color: white" class="h3 mb-3 fw-normal">Editar Livro</h1>
+
+        <div class="form-floating">
+        <input type="text" name="titulo" class="form-control" id="floatingInput" minlength="4" value="{{livros.titulo}}">
+        <label for="floatingInput">Título</label>
+        </div>
+    <br>
+        <div class="form-floating">
+        <input type="text" name="autor" class="form-control" id="floatingInput" value="{{livros.autor}}">
+        <label for="floatingInput">Autor</label>
+        </div>
+    <br>
+        <div class="form-floating">
+        <input type="text" name="qtd_paginas" class="form-control" minlength="2" id="floatingPassword" value="{{livros.qtd_paginas}}">
+        <label for="floatingPassword">Qtde de Páginas</label>
+        </div>
+        <br>
+        <div class="form-floating">
+        <input type="text" name="editora" class="form-control" value="{{livros.editora}}">
+        <label for="floatingPassword">Editora</label>
+        </div>
+        <div class="mb-3">
+        <label for="livros-image-file" class="form-label" style="color: aliceblue;"></label>
+        <input type="file" id="livros-image-file" class="form-control" name="image" value="{{livros.image}}">
+
+    </div>
+    <br>
+        <button class="btn btn-lg btn-danger" type="submit">Editar</button>
+    </form>
+    </main>
+    <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<body class="text-center" style="background-image: url(https://th.bing.com/th/id/R.f84ee3da08f7b36cc2f31042da4bbacb?rik=QUgtAk21E6NQXA&riu=http%3a%2f%2fimg4.wikia.nocookie.net%2f__cb20140520211519%2fmiddleearthshadowofmordor7723%2fimages%2f5%2f50%2fYre1o.jpg&ehk=wKiZyMeErs30hFAZwWxlvPGiqx9fEs8w7Htjx7OwKqc%3d&risl=&pid=ImgRaw&r=0);">
+    <main class="container-sm" style="max-width: 520px; background: #303030;
+    opacity: 0.85158; border-radius: 8px; margin-top: 2%;">
+    
+    <form action="/admin/minha-estante" method="post" enctype="multipart/form-data" name="form" style="margin: 5%; padding: 15px">
+
+        <h1 style="color: white" class="h3 mb-3 fw-normal">Cadastrar Livros</h1>
+
+        <div class="form-floating">
+        <input type="text" name="titulo" class="form-control" id="floatingInput" minlength="4" required placeholder="O Corvo e Outras Histórias">
+        <label for="floatingInput">Título</label>
+        </div>
+    <br>
+        <div class="form-floating">
+        <input type="text" name="autor" class="form-control" required id="floatingInput" placeholder="Edgar Allan Poe">
+        <label for="floatingInput">Autor</label>
+        </div>
+    <br>
+        <div class="form-floating">
+        <input type="text" name="qtd_paginas" class="form-control" minlength="2" id="floatingPassword" required placeholder="Ex.: 173">
+        <label for="floatingPassword">Qtde de Páginas</label>
+        </div>
+    <br>
+        <div class="form-floating">
+        <input type="text" name="editora" class="form-control" required placeholder="Ex.: Pandorga">
+        <label for="floatingPassword">Editora</label>
+        </div>
+    <br>
+     <div class="mb-3">
+        <label for="livros-image-file" class="form-label" style="color: aliceblue;">Imagem</label>
+        <input type="file" id="livros-image-file" class="form-control" name="image">
+    </div>
+        <button class="btn btn-lg btn-danger" type="submit" href='/admin/edit/{{_id}}'>Cadastrar</button>
+    </form>
+    </main>
+    <p style="color: white">&copy; 2022</p>
+</body>

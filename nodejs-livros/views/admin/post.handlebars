@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+<style>
+    :root {
+        --rgbCyan: 139, 233, 253;
+        --rgbGreen: 80, 250, 123;
+        --rgbOrange: 255, 184, 108;
+        --rgbPink: 255, 121, 198;
+        --rgbPurple: 189, 147, 249;
+        --rgbYellow: 241, 250, 140;
+        --rgbBackground: 40, 42, 54;
+        --rgbForeground: 248, 248, 242;
+
+        --title: 'Abril Text';
+        --body: 'Source Sans Pro';
+        --mono: 'Fira Code';
+
+        --alpha: 0.7;
+}
+
+body {
+    background-color: rgb(var(--rgbBackground));
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+}
+@media (min-width: 576px) {
+  .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+  .card {
+        margin-top: 5%;
+        float: left;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        width: 25%;
+        height: 450px;
+        padding: 8px
+    }
+  .card img {
+      width: 100%;
+      height: 260px;
+      background-size: cover;
+  }
+  .float-end {
+      position: fixed;
+      bottom: 40px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+
+  }
+  h2 {
+      margin-top: 5%;
+      color: white;
+  }
+    
+.float-end i {
+  font-size: 30px;
+    }
+    }
+</style>
+<h2 class="text-center">Minha Estante</h2>
+<main>
+    <div class="container">
+    {{#each livros}}
+        <div class="livros card">
+        <div class="card-header align-middle lh-base text-center fw-bold">
+            {{titulo}}
+        </div>
+        <div class="card-body p-0">
+            <img src="{{image}}" class="w-100" alt="{{titulo}}" />
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <span class="badge bg-secondary">{{autor}}</span>
+            <span class="badge bg-secondary">{{qtd_paginas}} páginas</span>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <span class="badge bg-secondary" style="font-size: 12px">{{editora}}</span>
+            <a href="/admin/deletar/{{id}}" class="btn btn-large btn-danger"><i class="bi bi-trash"></i></a>
+            <a href="/admin/minha-estante/edit/{{id}}" class="btn btn-large btn-primary"><i class="bi bi-pencil-square"></i></a>
+        </div>
+        </div>
+    {{/each}}
+</div>
+</main>
+
+{{!-- ############################################ --}}
+
+<button type="button" class="btn btn-primary rounded-circle float-end" data-bs-toggle="modal" data-bs-target="#modal"><i class="bi bi-plus"></i></button>
+<form class="row my-5 justify-content-center" method="post" action="/admin/minha-estante" enctype="multipart/form-data">
+      <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">Cadastrar Livro</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" />
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Autor</label>
+                <input type="text" class="form-control" id="autor" name="autor"/>
+              </div>
+              <div class="mb-3">
+                <label for="qtd_paginas" class="form-label">Qtde de páginas</label>
+                <input type="number" class="form-control" id="qtd_paginas" name="qtd_paginas" />
+              </div>
+              <div class="mb-3">
+                <label for="qtd_paginas" class="form-label">Editora</label>
+                <input type="text" class="form-control" id="editora" name="editora" />
+              </div>
+              <div class="mb-3">
+                <label for="book-image-file" class="form-label">Imagem</label>
+                <input
+                  type="file"
+                  id="book-image-file"
+                  class="form-control"
+                  name="image"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Fechar
+              </button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+                Cadastrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
