@@ -19,19 +19,19 @@ Também devo dar os créditos pela grande ajuda da IA Chat GPT, a qual quando ti
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="38" height="38"/>
 </div>
 
-## 🌐 Redes Sociais:
+### 🌐 Redes Sociais:
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/juliocaio-r-santos)
 
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/https://www.instagram.com/juliocaiordos/)
 
 [![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023?style=for-the-badge&logo=Pinterest&logoColor=white)](https://pinterest.com/https://br.pinterest.com/juliocaiorodriguesdossantos/)
 
-## Autores
+### Autores
 
 - [Julio Caio](https://www.github.com/Julio-Caio)
 
 
-## Rodando localmente
+### Rodando localmente
 
 Clone o projeto
 
