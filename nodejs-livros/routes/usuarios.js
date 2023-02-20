@@ -63,7 +63,7 @@ router.post('/usuarios/cadastro', async (req, res) => {
         try {
             await novoUsuario.save()
           
-            res.status(201).json({message: "Usuário cadastrado com sucesso!"})
+            res.status(201).send('<style> h1{ font-family: Arial} </style> <h1>Usuário cadastrado com sucesso! <h1>')
 
         } catch (error) {
             res.status(500).json({message: "Deu ruim"})
@@ -82,7 +82,7 @@ router.post('/usuarios/login', (req, res, next) => {
 
     if (err) return res.status(500).json({ msg: 'Erro no servidor.'});
 
-    if (!user) return res.status(404).send('Usuário não encontrado.');
+    if (!user) return res.status(404).send('<style> h1{ font-family: Arial} </style> <h1>Usuário não encontrado.<h1>');
     
     const passwordIsValid = bcrypt.compareSync(req.body.senha, user.senha);
     if (!passwordIsValid) return res.status(401).send({ auth: false, token: null }) ;
@@ -170,7 +170,7 @@ router.get('/admin/deletar/:id', async (req, res) => {
     await usuario.save();
 
     // Retorna mensagem de sucesso
-    res.status(200).json({ mensagem: 'Livro deletado com sucesso' });
+    res.status(200).json('<style> h1{ font-family: Arial} </style> <h1> Livro deletado com sucesso! <h1>');
   } catch (err) {
     res.status(401).json({ mensagem: 'Erro ao deletar o livro: ' + err.message });
   }
