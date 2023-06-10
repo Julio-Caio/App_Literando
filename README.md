@@ -42,7 +42,7 @@ Clone o projeto
 Entre no diretório do projeto
 
 ```bash
-  cd my-project
+  cd App_Literando
 ```
 
 Instale as dependências
